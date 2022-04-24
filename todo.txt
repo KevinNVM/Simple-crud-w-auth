@@ -1,0 +1,23 @@
+FINISHED (Probably)
+- reset password features
+- find username
+- edit profiles
+
+UNFINISHED
+- admin dashboard and other admin features
+- settings tab [plan : light mode, ..]
+- email confirmation when a significant changes has been made to the account
+
+
+can do later
+- bug when uploading different file extension on edit profile picture
+- there are no cooldown when user wants to generate new otp
+- username and password can contain spaces and stupid characters
+- poor session and cookie data management
+- lack of show password checkbox on some input
+
+probably never gonna fixed this
+- poor code alignment
+- poor ui
+- poor auth system
+- poor skill (apr/2022)

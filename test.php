@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css'>
+    <title>TEST</title>
+</head>
+<body> 
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="foto">
+        <button type="submit" name="upload">upload</button>
+    </form>
+    <?php  
+        if (isset($_POST['upload'])) {
+            $fname = $_FILES['foto']['tmp_name'];
+            $des = 'testimg/' . $_FILES['foto']['name'];
+            if (move_uploaded_file($fname, $des)) {
+                // File and new size
+$filename = 'testimg/' . $_FILES['foto']['name'];
+
+
+/// Load image file
+$image = imagecreatefromjpeg($filename);
+  
+// Use imagescale() function to scale the image
+$img = imagescale( $image, 500, 500 );
+  
+
+header("Content-type: image/jpeg");
+imagejpeg($img,$des);
+                echo "berhasil";
+            } else {
+                echo "gagal";
+            }
+        }
+     ?>
+
+<!-- Javascript with Popper -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous'></script>
+<!-- /Javascript with Popper -->
+</body>
+</html>
